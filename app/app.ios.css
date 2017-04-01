@@ -1,1 +1,5 @@
 @import "app-common.css";
+
+.list-group .list-group-header-item {
+    text-align: center;
+}

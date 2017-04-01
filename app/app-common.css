@@ -1,9 +1,14 @@
 ﻿@import "nativescript-theme-core/css/forest.css";
 
+.list-group .list-group-header-item {
+    margin-top: 16;
+    margin-bottom: 8;
+}
+
 .list-group .list-group-item .thumb{
     width: 60;
     height: 60;
-    margin-right: 16
+    margin: 0;
 }
 
 .list-group .list-group-item .img-circle {

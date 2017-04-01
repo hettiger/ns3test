@@ -1,0 +1,11 @@
+﻿@import "nativescript-theme-core/css/forest.css";
+
+.list-group .list-group-item .thumb{
+    width: 60;
+    height: 60;
+    margin-right: 16
+}
+
+.list-group .list-group-item .img-circle {
+    border-radius: 30;
+}

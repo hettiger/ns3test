@@ -1,0 +1,6 @@
+@import "app-common.css";
+
+.activity-indicator {
+    width: 50;
+    height: 50;
+}

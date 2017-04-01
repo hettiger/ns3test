@@ -1,9 +1,10 @@
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
-import { IListItem, MainViewModel } from './main-view-model';
+import { MainViewModel } from './main-view-model';
 import { ListView } from "tns-core-modules/ui/list-view";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { topmost } from "tns-core-modules/ui/frame";
+import { IListItem } from "../../models/contracts/list-item-interface";
 
 let model: MainViewModel;
 
@@ -28,7 +29,7 @@ export function onItemTap(args) {
 
     if ( ! item.templateKey.match(/header$/)) {
         topmost().navigate({
-            moduleName: "detail-page",
+            moduleName: "pages/detail/detail-page",
             context: item.item
         });
     }

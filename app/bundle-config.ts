@@ -3,5 +3,6 @@ if ((<any>global).TNS_WEBPACK) {
     require("bundle-entry-points");
 
     //register application modules
-    global.registerModule("main-page", () => require("./main-page"));
+    global.registerModule("main-page", () => require("./pages/main/main-page"));
+    global.registerModule("detail-page", () => require("./pages/detail/detail-page"));
 }

@@ -1,48 +1,10 @@
 import { Observable } from 'data/observable';
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { ListView } from "tns-core-modules/ui/list-view";
-
-interface IThread {
-    thumbnail: string;
-    url: string;
-    title: string;
-}
-
-interface IThreads {
-    data: {
-        children: [
-            {
-                kind: string;
-                data: IThread;
-            }
-        ]
-    }
-}
-
-export interface IListItem {
-    templateKey: string;
-    item: IThread;
-}
-
-class ListItem implements IListItem {
-
-    private _templateKey: string;
-    private _item: any;
-
-    constructor(templateKey: string, item: any) {
-        this._templateKey = templateKey;
-        this._item = item;
-    }
-
-    get templateKey(): string {
-        return this._templateKey;
-    }
-
-    get item(): any {
-        return this._item;
-    }
-
-}
+import { IListItem } from "../../models/contracts/list-item-interface";
+import { ListItem } from "../../models/list-item";
+import { IThreads } from "../../models/contracts/threads-interface";
+import { IThread } from "../../models/contracts/thread-interface";
 
 export class MainViewModel extends Observable {
 

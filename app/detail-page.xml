@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onUnloaded" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="{{ title }}" class="action-bar"/>
+    </Page.actionBar>
+
+    <GridLayout>
+        <WebView id="webView" src="{{ url }}" loadStarted="onLoadStarted" loadFinished="onLoadFinished"/>
+        <ActivityIndicator busy="{{ isLoading }}" class="activity-indicator"/>
+    </GridLayout>
+
+</Page>

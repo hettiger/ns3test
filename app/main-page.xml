@@ -1,11 +1,11 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" class="page">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onUnloaded" class="page">
 
     <Page.actionBar>
         <ActionBar title="Recent {NS} Discussions" class="action-bar"/>
     </Page.actionBar>
 
     <GridLayout>
-        <ListView id="listView" class="list-group" items="{{ items }}" itemTemplateSelector="itemTemplateSelector">
+        <ListView id="listView" class="list-group" items="{{ items }}" itemTap="onItemTap" itemTemplateSelector="itemTemplateSelector">
             <ListView.itemTemplates>
                 <template key="nativescript-header">
                     <StackLayout class="list-group-item list-group-header-item">

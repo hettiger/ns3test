@@ -4,36 +4,51 @@
         <ActionBar title="Recent {NS} Discussions" class="action-bar"/>
     </Page.actionBar>
 
-    <GridLayout>
-        <ListView id="listView" class="list-group" items="{{ items }}" itemTap="onItemTap" itemTemplateSelector="itemTemplateSelector">
-            <ListView.itemTemplates>
-                <template key="nativescript-header">
-                    <StackLayout class="list-group-item list-group-header-item">
-                        <Label class="h2" text="NativeScript"/>
-                        <Label class="body" textWrap="true" text="Enjoy the latest discussions about NativeScript"/>
-                    </StackLayout>
-                </template>
-                <template key="nativescript">
-                    <GridLayout class="list-group-item" rows="auto" columns="auto, 16, *">
-                        <Image row="0" col="0" src="{{ item.thumbnail }}" class="thumb img-circle"/>
-                        <Label row="0" col="2" text="{{ item.title }}" textWrap="true" class="list-group-item-heading"/>
+    <TabView>
+        <TabView.items>
+            <TabViewItem title="List">
+                <TabViewItem.view>
+                    <GridLayout>
+                        <ListView id="listView" class="list-group" items="{{ items }}" itemTap="onItemTap" itemTemplateSelector="itemTemplateSelector">
+                            <ListView.itemTemplates>
+                                <template key="nativescript-header">
+                                    <StackLayout class="list-group-item list-group-header-item">
+                                        <Label class="h2" text="NativeScript"/>
+                                        <Label class="body" textWrap="true" text="Enjoy the latest discussions about NativeScript"/>
+                                    </StackLayout>
+                                </template>
+                                <template key="nativescript">
+                                    <GridLayout class="list-group-item" rows="auto" columns="auto, 16, *">
+                                        <Image row="0" col="0" src="{{ item.thumbnail }}" class="thumb img-circle"/>
+                                        <Label row="0" col="2" text="{{ item.title }}" textWrap="true" class="list-group-item-heading"/>
+                                    </GridLayout>
+                                </template>
+                                <template key="typescript-header">
+                                    <StackLayout class="list-group-item list-group-header-item">
+                                        <Label class="h2" text="TypeScript"/>
+                                        <Label class="body" textWrap="true" text="Now that you are up to date when it comes to NativeScript make sure to also have a read about TypeScript"/>
+                                    </StackLayout>
+                                </template>
+                                <template key="typescript">
+                                    <GridLayout class="list-group-item" rows="auto" columns="*, 16, auto">
+                                        <Label row="0" col="0" text="{{ item.title }}" textWrap="true" class="list-group-item-heading"/>
+                                        <Image row="0" col="2" src="{{ item.thumbnail }}" class="thumb img-circle"/>
+                                    </GridLayout>
+                                </template>
+                            </ListView.itemTemplates>
+                        </ListView>
+                        <ActivityIndicator busy="{{ isLoading }}" class="activity-indicator"/>
                     </GridLayout>
-                </template>
-                <template key="typescript-header">
-                    <StackLayout class="list-group-item list-group-header-item">
-                        <Label class="h2" text="TypeScript"/>
-                        <Label class="body" textWrap="true" text="Now that you are up to date when it comes to NativeScript make sure to also have a read about TypeScript"/>
-                    </StackLayout>
-                </template>
-                <template key="typescript">
-                    <GridLayout class="list-group-item" rows="auto" columns="*, 16, auto">
-                        <Label row="0" col="0" text="{{ item.title }}" textWrap="true" class="list-group-item-heading"/>
-                        <Image row="0" col="2" src="{{ item.thumbnail }}" class="thumb img-circle"/>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="About">
+                <TabViewItem.view>
+                    <GridLayout>
+                        <Label verticalAlignment="center" horizontalAlignment="center" text="This app is all about testing"/>
                     </GridLayout>
-                </template>
-            </ListView.itemTemplates>
-        </ListView>
-        <ActivityIndicator busy="{{ isLoading }}" class="activity-indicator"/>
-    </GridLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
 
 </Page>

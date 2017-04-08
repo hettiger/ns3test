@@ -10,9 +10,10 @@ let model: MainViewModel;
 
 export function onLoaded(args: EventData) {
     let page = <Page>args.object;
-    let listView = <ListView>page.getViewById("listView");
+    // let listView = <ListView>page.getViewById("listView");
 
-    model = new MainViewModel(listView);
+    // model = new MainViewModel(listView);
+    model = new MainViewModel();
     page.bindingContext = model;
 }
 

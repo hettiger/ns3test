@@ -1,21 +1,16 @@
-# Flexible List
+# Flexible List inside a TabView
 
-* ListView with multiple item types that use different ListView item templates
-* Multiple item sources
-* Loading indicator & fade in implemented
-
-![Flexible List App Demo](flexible-list-demo.gif)
+This repository shows the attempt to put the [flexible list](https://github.com/hettiger/ns3test/tree/flexible-list) inside a TabView.
 
 ## Reasons for this demo
 
-* It seems to be impossible nesting ListViews into ScrollViews
+This demo proofs that ListView item templates __do not__ work inside a TabView.
+Outside of a TabView everything would work just fine as you can see in the [flexible-list branch](https://github.com/hettiger/ns3test/tree/flexible-list).
 
 ## Issues
 
-* Disabling user interaction on individual ListView item templates seems to be impossible
-* No straight forward way to disable list item dividers
+* The `page.getViewById("listView")` call in `app/pages/main/main-page.ts` fails because {NS} is not able to build the UI
+* With the fade in logic in place I could no longer build the app
 
-## Help wanted
-
-Do you know a better way to do it or how to fix the issues?   
-__Please open up an issue and let me know how this approach could be improved!__
+In order to get a running build I removed the fade in logic. (Compare with the [flexible-list branch](https://github.com/hettiger/ns3test/tree/flexible-list) for details)
+Besides of that there are no changes but putting everything inside a TabView ...

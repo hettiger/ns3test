@@ -12,11 +12,13 @@ export class MainViewModel extends Observable {
     private _isLoading: boolean = true;
     private _items: ObservableArray<IListItem>;
 
-    constructor(listView: ListView) {
+    constructor(listView?: ListView) {
         super();
 
-        this._listView = listView;
-        this._listView.opacity = 0;
+        if (listView) {
+            this._listView = listView;
+            this._listView.opacity = 0;
+        }
     }
 
     get isLoading(): boolean {
@@ -75,10 +77,12 @@ export class MainViewModel extends Observable {
                 .then(() => {
                     this.isLoading = false;
 
-                    this._listView.animate({
-                        opacity: 1,
-                        duration: 600
-                    });
+                    if (this._listView) {
+                        this._listView.animate({
+                            opacity: 1,
+                            duration: 600
+                        });
+                    }
                 });
         }
 
